@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=3 uid="uid://b57d3ef66agov"]
+
+[ext_resource type="Script" path="res://addons/present/scene_display.gd" id="1_ntaa4"]
+
+[sub_resource type="SystemFont" id="SystemFont_2opkj"]
+font_names = PackedStringArray("JetBrains Mono", "Monospace")
+
+[node name="01" type="VBoxContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ntaa4")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 2
+theme_override_fonts/mono_font = SubResource("SystemFont_2opkj")
+theme_override_font_sizes/normal_font_size = 96
+theme_override_font_sizes/mono_font_size = 96
+bbcode_enabled = true
+text = "[center][rainbow freq=0.2 sat=0.8 val=0.9][wave amp=100 freq=4]The power of Plugins and [/wave][/rainbow][color=darkgreen][code]@tool[/code][/color] [rainbow freq=0.2 sat=0.8 val=0.9][wave amp=100 freq=4]in Godot[/wave][/rainbow]"
+fit_content = true
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+layout_mode = 2
+size_flags_vertical = 2
+bbcode_enabled = true
+text = "[center]By Lyric Moysey-Rubin [pulse freq=0.8 color=#FFFFFF00 ease=2.0]Also known as IntangibleMatter[/pulse]"
+fit_content = true

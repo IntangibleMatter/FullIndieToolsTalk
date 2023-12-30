@@ -1,7 +1,11 @@
 [gd_resource type="Resource" script_class="SlideResource" load_steps=2 format=3 uid="uid://dffkar65oh2ab"]
 
-[ext_resource type="Script" path="res://addons/present/SlideResource.gd" id="1_22mv7"]
+[ext_resource type="Script" path="res://addons/present/misc/SlideResource.gd" id="1_bojq7"]
 
 [resource]
-script = ExtResource("1_22mv7")
-tab = "2D"
+script = ExtResource("1_bojq7")
+tab = "Slide"
+slide_type = "slide"
+file = "res://addons/present/slides/SlideScenes/01.tscn"
+plugins = Array[Resource("res://addons/present/misc/plugin_change_resource.gd")]([])
+disabled_features = [0, 2]

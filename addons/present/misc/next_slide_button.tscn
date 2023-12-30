@@ -1,9 +1,9 @@
 [gd_scene load_steps=2 format=3 uid="uid://bu6nprxpp3xeq"]
 
-[ext_resource type="Script" path="res://addons/present/obj/next_slide_button.gd" id="1_yn754"]
+[ext_resource type="Script" path="res://addons/present/misc/next_slide_button.gd" id="1_txwd7"]
 
 [node name="NextSlideButton" type="Button"]
 offset_right = 8.0
 offset_bottom = 8.0
 text = "Next Slide!"
-script = ExtResource("1_yn754")
+script = ExtResource("1_txwd7")
