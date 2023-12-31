@@ -4,9 +4,7 @@ extends Resource
 ## This is the tab that should be used on this slide.
 @export var tab : String
 ## This is to make it easier to know how the file should be used.
-@export_enum("scene", "script", "addon", "slide") var slide_type : String:
-	set(val):
-		slide_type = val
+@export_enum("none", "scene", "script", "addon", "slide") var slide_type : String
 ## Whatever file should be loaded into the tab on this slide.
 @export_file() var file : String
 ## Next slide to display

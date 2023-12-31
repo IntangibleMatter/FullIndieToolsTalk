@@ -2,9 +2,11 @@
 class_name Player
 extends EditorPlugin
 
-var current_slide : SlideResource = preload("res://addons/present/slides/01.tres")
+var current_slide : SlideResource = preload("res://addons/present/slides/00.tres")
 
 var display : Control
+
+
 
 func open_tab(tab: String) -> void:
 	EditorInterface.set_main_screen_editor(tab)

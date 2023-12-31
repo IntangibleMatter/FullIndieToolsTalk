@@ -8,4 +8,4 @@ tab = "Slide"
 slide_type = "slide"
 file = "res://addons/present/slides/SlideScenes/01.tscn"
 plugins = Array[Resource("res://addons/present/misc/plugin_change_resource.gd")]([])
-disabled_features = [0, 2]
+disabled_features = [0, 1, 2, 3, 4, 5, 6, 7]

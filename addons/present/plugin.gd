@@ -17,7 +17,6 @@ func _enter_tree() -> void:
 	player = Player.new()
 	player.display = display
 	print(player)
-	player.load_slide()
 	nextslidebutton.pressed.connect(player.next_slide)
 
 func _exit_tree() -> void:

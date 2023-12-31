@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="SlideResource" load_steps=3 format=3 uid="uid://cno6lw2mo8n1n"]
+
+[ext_resource type="Script" path="res://addons/present/misc/SlideResource.gd" id="1_2a1wf"]
+[ext_resource type="Resource" uid="uid://dffkar65oh2ab" path="res://addons/present/slides/01.tres" id="1_wnbf5"]
+
+[resource]
+script = ExtResource("1_2a1wf")
+tab = ""
+slide_type = "none"
+file = ""
+next_slide = ExtResource("1_wnbf5")
+plugins = Array[Resource("res://addons/present/misc/plugin_change_resource.gd")]([])
+disabled_features = [0, 2]
