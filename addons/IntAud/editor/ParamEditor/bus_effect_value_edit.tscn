@@ -1,0 +1,61 @@
+[gd_scene load_steps=4 format=3 uid="uid://cjve5l8f5nq3c"]
+
+[ext_resource type="Script" path="res://addons/IntAud/editor/ParamEditor/bus_effect_value_edit.gd" id="1_i6o0m"]
+[ext_resource type="Texture2D" uid="uid://biralxlg12brn" path="res://addons/IntAud/icons/x.svg" id="2_6ukgl"]
+[ext_resource type="PackedScene" uid="uid://dqb04cgc324n1" path="res://addons/IntAud/editor/ParamEditor/param_connect_button.tscn" id="2_aacgd"]
+
+[node name="BusEffectValueEdit" type="Panel"]
+custom_minimum_size = Vector2(0, 32)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+script = ExtResource("1_i6o0m")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="OptionName" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.75
+text = "EffectParam"
+horizontal_alignment = 1
+
+[node name="ButtonsContainer" type="HBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ConnectButton" parent="HBoxContainer/ButtonsContainer" instance=ExtResource("2_aacgd")]
+layout_mode = 2
+item_count = 3
+popup/item_0/text = "first"
+popup/item_0/id = 0
+popup/item_1/text = "second"
+popup/item_1/id = 1
+popup/item_2/text = "thirdd"
+popup/item_2/id = 2
+
+[node name="EditParam" type="Button" parent="HBoxContainer/ButtonsContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Edit
+"
+
+[node name="DisconnectButton" type="Button" parent="HBoxContainer/ButtonsContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.33
+icon = ExtResource("2_6ukgl")
+icon_alignment = 1
+
+[connection signal="pressed" from="HBoxContainer/ButtonsContainer/DisconnectButton" to="." method="_on_disconnect_button_pressed"]

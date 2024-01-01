@@ -14,9 +14,19 @@ config/name="FullIndieToolsTalk"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
+Music="*res://addons/IntAud/player/Music.tscn"
+Sound="*res://addons/IntAud/player/Sound.tscn"
+
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/mysupercoolplugin/plugin.cfg", "res://addons/present/plugin.cfg", "res://addons/rtexpacker/addons/r_tex_packer_importer/plugin.cfg")
+enabled=PackedStringArray("res://addons/IntAud/plugin.cfg", "res://addons/dialogue_manager/plugin.cfg", "res://addons/mysupercoolplugin/plugin.cfg", "res://addons/present/plugin.cfg", "res://addons/r_tex_packer_importer/plugin.cfg")
+
+[internationalization]
+
+locale/translations_pot_files=PackedStringArray("res://assets/demos/dialogue_manager/testy.dialogue")
 
 [r_tex_packer]
 

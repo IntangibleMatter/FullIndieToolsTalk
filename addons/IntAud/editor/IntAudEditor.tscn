@@ -1,0 +1,382 @@
+[gd_scene load_steps=17 format=3 uid="uid://irig0p680mc2"]
+
+[ext_resource type="Texture2D" uid="uid://c4ucxk4y6myae" path="res://addons/IntAud/icons/remove.svg" id="1_1eh2s"]
+[ext_resource type="Texture2D" uid="uid://d2hujprxldyv5" path="res://addons/IntAud/icons/arrow_up.svg" id="1_egqa3"]
+[ext_resource type="Script" path="res://addons/IntAud/editor/Events.gd" id="1_jedoe"]
+[ext_resource type="Texture2D" uid="uid://dmnro7nwfnhdv" path="res://addons/IntAud/icons/folder.svg" id="1_rq8ry"]
+[ext_resource type="Texture2D" uid="uid://grva0ympihw8" path="res://addons/IntAud/icons/hlt_head.svg" id="1_x1kmd"]
+[ext_resource type="Texture2D" uid="uid://cvilh1sjuet5l" path="res://addons/IntAud/icons/hlt_tail.svg" id="3_hdwga"]
+[ext_resource type="Texture2D" uid="uid://n7kdsynxet1i" path="res://addons/IntAud/icons/arrow_down.svg" id="3_huu3s"]
+[ext_resource type="Texture2D" uid="uid://bccvkx231xm8h" path="res://addons/IntAud/icons/bank.svg" id="3_m38ah"]
+[ext_resource type="Texture2D" uid="uid://brgb01373a853" path="res://addons/IntAud/icons/event.svg" id="3_x4q63"]
+[ext_resource type="Texture2D" uid="uid://b4tucxb620t8j" path="res://addons/IntAud/icons/rename.svg" id="5_46mpq"]
+[ext_resource type="Script" path="res://addons/IntAud/editor/EventsTree.gd" id="6_xo43t"]
+[ext_resource type="Texture2D" uid="uid://c156xc3h3ffps" path="res://addons/IntAud/icons/hlt_loop.svg" id="7_i6ej1"]
+[ext_resource type="Script" path="res://addons/IntAud/editor/BusChoice.gd" id="9_vobt7"]
+[ext_resource type="Script" path="res://addons/IntAud/editor/ParamsTree.gd" id="11_10037"]
+[ext_resource type="Texture2D" uid="uid://ok531pawdo8i" path="res://addons/IntAud/icons/paramico.svg" id="11_fo7vt"]
+[ext_resource type="Script" path="res://addons/IntAud/editor/ParamsConnectMenu.gd" id="12_k1qfr"]
+
+[node name="IntAudEditor" type="Control"]
+custom_minimum_size = Vector2(0, 128)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="TabContainer" type="TabContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+tab_alignment = 1
+
+[node name="Sound" type="HSplitContainer" parent="TabContainer"]
+layout_mode = 2
+
+[node name="HSplitContainer" type="HSplitContainer" parent="TabContainer/Sound"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Events" type="VBoxContainer" parent="TabContainer/Sound/HSplitContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+script = ExtResource("1_jedoe")
+
+[node name="Label" type="Label" parent="TabContainer/Sound/HSplitContainer/Events"]
+layout_mode = 2
+text = "Events"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="EventButtons" type="HBoxContainer" parent="TabContainer/Sound/HSplitContainer/Events"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="TabContainer/Sound/HSplitContainer/Events/EventButtons"]
+layout_mode = 2
+size_flags_horizontal = 10
+text = "Add:"
+
+[node name="NewFolder" type="Button" parent="TabContainer/Sound/HSplitContainer/Events/EventButtons"]
+layout_mode = 2
+icon = ExtResource("1_rq8ry")
+
+[node name="NewBank" type="Button" parent="TabContainer/Sound/HSplitContainer/Events/EventButtons"]
+layout_mode = 2
+icon = ExtResource("3_m38ah")
+
+[node name="NewEvent" type="Button" parent="TabContainer/Sound/HSplitContainer/Events/EventButtons"]
+layout_mode = 2
+disabled = true
+icon = ExtResource("3_x4q63")
+
+[node name="Rename" type="Button" parent="TabContainer/Sound/HSplitContainer/Events/EventButtons"]
+layout_mode = 2
+size_flags_horizontal = 10
+icon = ExtResource("5_46mpq")
+
+[node name="Delete" type="Button" parent="TabContainer/Sound/HSplitContainer/Events/EventButtons"]
+layout_mode = 2
+size_flags_horizontal = 8
+icon = ExtResource("1_1eh2s")
+
+[node name="DeleteConfirmationDialog" type="ConfirmationDialog" parent="TabContainer/Sound/HSplitContainer/Events/EventButtons/Delete"]
+initial_position = 2
+title = "Delete item from events?"
+size = Vector2i(234, 100)
+dialog_text = "There is no way to undo this"
+
+[node name="EventsTree" type="Tree" parent="TabContainer/Sound/HSplitContainer/Events"]
+layout_mode = 2
+size_flags_vertical = 3
+hide_root = true
+drop_mode_flags = 3
+script = ExtResource("6_xo43t")
+
+[node name="SoundEditor" type="VBoxContainer" parent="TabContainer/Sound/HSplitContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="EditorMenu" type="VBoxContainer" parent="TabContainer/Sound/HSplitContainer/SoundEditor"]
+layout_mode = 2
+
+[node name="Test" type="Button" parent="TabContainer/Sound/HSplitContainer/SoundEditor/EditorMenu"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Test"
+
+[node name="SoundType" type="TabContainer" parent="TabContainer/Sound/HSplitContainer/SoundEditor/EditorMenu"]
+layout_mode = 2
+size_flags_vertical = 2
+tab_alignment = 1
+
+[node name="Choice" type="HBoxContainer" parent="TabContainer/Sound/HSplitContainer/SoundEditor/EditorMenu/SoundType"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Sequence" type="CheckBox" parent="TabContainer/Sound/HSplitContainer/SoundEditor/EditorMenu/SoundType/Choice"]
+layout_mode = 2
+size_flags_horizontal = 6
+text = "Sequence"
+
+[node name="H-L-T" type="HBoxContainer" parent="TabContainer/Sound/HSplitContainer/SoundEditor/EditorMenu/SoundType"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HeadOptions" type="HBoxContainer" parent="TabContainer/Sound/HSplitContainer/SoundEditor/EditorMenu/SoundType/H-L-T"]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="HeadLabel" type="Label" parent="TabContainer/Sound/HSplitContainer/SoundEditor/EditorMenu/SoundType/H-L-T/HeadOptions"]
+layout_mode = 2
+text = "Head Rand Options"
+
+[node name="HeadOption" type="SpinBox" parent="TabContainer/Sound/HSplitContainer/SoundEditor/EditorMenu/SoundType/H-L-T/HeadOptions"]
+layout_mode = 2
+min_value = 1.0
+max_value = 1.0
+value = 1.0
+
+[node name="TailOptions" type="HBoxContainer" parent="TabContainer/Sound/HSplitContainer/SoundEditor/EditorMenu/SoundType/H-L-T"]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="TailLabel" type="Label" parent="TabContainer/Sound/HSplitContainer/SoundEditor/EditorMenu/SoundType/H-L-T/TailOptions"]
+layout_mode = 2
+text = "Tail Rand Options"
+
+[node name="TailOption" type="SpinBox" parent="TabContainer/Sound/HSplitContainer/SoundEditor/EditorMenu/SoundType/H-L-T/TailOptions"]
+layout_mode = 2
+min_value = 1.0
+max_value = 1.0
+value = 1.0
+
+[node name="Multi" type="HBoxContainer" parent="TabContainer/Sound/HSplitContainer/SoundEditor/EditorMenu/SoundType"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label3" type="Label" parent="TabContainer/Sound/HSplitContainer/SoundEditor/EditorMenu/SoundType/Multi"]
+layout_mode = 2
+text = "Multi"
+
+[node name="Editor" type="VBoxContainer" parent="TabContainer/Sound/HSplitContainer/SoundEditor"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="EditorButtons" type="HBoxContainer" parent="TabContainer/Sound/HSplitContainer/SoundEditor/Editor"]
+layout_mode = 2
+alignment = 1
+
+[node name="RemoveAudio" type="Button" parent="TabContainer/Sound/HSplitContainer/SoundEditor/Editor/EditorButtons"]
+layout_mode = 2
+text = "Remove Audio"
+icon = ExtResource("1_1eh2s")
+
+[node name="SoundUp" type="Button" parent="TabContainer/Sound/HSplitContainer/SoundEditor/Editor/EditorButtons"]
+layout_mode = 2
+text = "Move Sound Up
+"
+icon = ExtResource("1_egqa3")
+
+[node name="SoundDown" type="Button" parent="TabContainer/Sound/HSplitContainer/SoundEditor/Editor/EditorButtons"]
+layout_mode = 2
+text = "Move Sound Down"
+icon = ExtResource("3_huu3s")
+
+[node name="ItemList" type="ItemList" parent="TabContainer/Sound/HSplitContainer/SoundEditor/Editor"]
+layout_mode = 2
+size_flags_vertical = 3
+item_count = 3
+item_0/text = "head"
+item_0/icon = ExtResource("1_x1kmd")
+item_1/text = "loop"
+item_1/icon = ExtResource("7_i6ej1")
+item_2/text = "tail"
+item_2/icon = ExtResource("3_hdwga")
+
+[node name="TabContainer" type="TabContainer" parent="TabContainer/Sound/HSplitContainer"]
+layout_mode = 2
+
+[node name="EventSettingsEditor" type="VBoxContainer" parent="TabContainer/Sound"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.4
+
+[node name="BusOptions" type="HBoxContainer" parent="TabContainer/Sound/EventSettingsEditor"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="TabContainer/Sound/EventSettingsEditor/BusOptions"]
+layout_mode = 2
+text = "Bus:"
+
+[node name="BusChoice" type="OptionButton" parent="TabContainer/Sound/EventSettingsEditor/BusOptions"]
+layout_mode = 2
+size_flags_horizontal = 3
+item_count = 21
+selected = 0
+popup/item_0/text = "Master"
+popup/item_0/id = 0
+popup/item_1/text = "sfx"
+popup/item_1/id = 1
+popup/item_2/text = "mus"
+popup/item_2/id = 2
+popup/item_3/text = "sfx_ambient"
+popup/item_3/id = 3
+popup/item_4/text = "sfx_gameplay"
+popup/item_4/id = 4
+popup/item_5/text = "mus_main"
+popup/item_5/id = 5
+popup/item_6/text = "mus_cutscene"
+popup/item_6/id = 6
+popup/item_7/text = "sfx_speech"
+popup/item_7/id = 7
+popup/item_8/text = "New Bus"
+popup/item_8/id = 8
+popup/item_9/text = "New Bus 2"
+popup/item_9/id = 9
+popup/item_10/text = "New Bus 3"
+popup/item_10/id = 10
+popup/item_11/text = "New Bus 4"
+popup/item_11/id = 11
+popup/item_12/text = "New Bus 5"
+popup/item_12/id = 12
+popup/item_13/text = "New Bus 6"
+popup/item_13/id = 13
+popup/item_14/text = "New Bus 7"
+popup/item_14/id = 14
+popup/item_15/text = "New Bus 8"
+popup/item_15/id = 15
+popup/item_16/text = "New Bus 9"
+popup/item_16/id = 16
+popup/item_17/text = "New Bus 10"
+popup/item_17/id = 17
+popup/item_18/text = "New Bus 11"
+popup/item_18/id = 18
+popup/item_19/text = "New Bus 12"
+popup/item_19/id = 19
+popup/item_20/text = "New Bus 13"
+popup/item_20/id = 20
+script = ExtResource("9_vobt7")
+
+[node name="Music" type="HBoxContainer" parent="TabContainer"]
+visible = false
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TabContainer/Music"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "This tab is under construction. Come back when Reduz's music implementation is merged, then we can get started on some params."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Params" type="TabContainer" parent="TabContainer"]
+visible = false
+layout_mode = 2
+tab_alignment = 1
+
+[node name="Configure" type="HSplitContainer" parent="TabContainer/Params"]
+layout_mode = 2
+
+[node name="ParamsTree" type="VBoxContainer" parent="TabContainer/Params/Configure"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.5
+script = ExtResource("11_10037")
+
+[node name="Label" type="Label" parent="TabContainer/Params/Configure/ParamsTree"]
+layout_mode = 2
+text = "Params"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="EventButtons" type="HBoxContainer" parent="TabContainer/Params/Configure/ParamsTree"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="TabContainer/Params/Configure/ParamsTree/EventButtons"]
+layout_mode = 2
+size_flags_horizontal = 10
+text = "Add:"
+
+[node name="NewFolder" type="Button" parent="TabContainer/Params/Configure/ParamsTree/EventButtons"]
+layout_mode = 2
+icon = ExtResource("1_rq8ry")
+
+[node name="NewParam" type="Button" parent="TabContainer/Params/Configure/ParamsTree/EventButtons"]
+layout_mode = 2
+icon = ExtResource("11_fo7vt")
+
+[node name="Delete" type="Button" parent="TabContainer/Params/Configure/ParamsTree/EventButtons"]
+layout_mode = 2
+size_flags_horizontal = 10
+icon = ExtResource("1_1eh2s")
+
+[node name="DeleteConfirmationDialog" type="ConfirmationDialog" parent="TabContainer/Params/Configure/ParamsTree/EventButtons/Delete"]
+initial_position = 2
+title = "Delete item from params?"
+size = Vector2i(234, 100)
+dialog_text = "There is no way to undo this"
+
+[node name="ParamsTree" type="Tree" parent="TabContainer/Params/Configure/ParamsTree"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+columns = 2
+
+[node name="ParamSettings" type="VBoxContainer" parent="TabContainer/Params/Configure"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Connect" type="ScrollContainer" parent="TabContainer/Params"]
+visible = false
+layout_mode = 2
+script = ExtResource("12_k1qfr")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TabContainer/Params/Connect"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="OverallOptions" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -324.0
+offset_top = -3.0
+offset_bottom = 28.0
+grow_horizontal = 0
+alignment = 1
+
+[node name="RefreshSounds" type="Button" parent="OverallOptions"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Refresh"
+
+[node name="SaveSounds" type="Button" parent="OverallOptions"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Save"
+
+[connection signal="pressed" from="TabContainer/Sound/HSplitContainer/Events/EventButtons/NewFolder" to="TabContainer/Sound/HSplitContainer/Events" method="_on_new_folder_pressed"]
+[connection signal="pressed" from="TabContainer/Sound/HSplitContainer/Events/EventButtons/NewEvent" to="TabContainer/Sound/HSplitContainer/Events" method="_on_new_event_pressed"]
+[connection signal="pressed" from="TabContainer/Sound/HSplitContainer/Events/EventButtons/Delete" to="TabContainer/Sound/HSplitContainer/Events" method="_on_delete_pressed"]
+[connection signal="confirmed" from="TabContainer/Sound/HSplitContainer/Events/EventButtons/Delete/DeleteConfirmationDialog" to="TabContainer/Sound/HSplitContainer/Events" method="_on_delete_confirmation_dialog_confirmed"]
+[connection signal="item_selected" from="TabContainer/Sound/HSplitContainer/Events/EventsTree" to="TabContainer/Sound/HSplitContainer/Events" method="_on_events_tree_item_selected"]
+[connection signal="pressed" from="TabContainer/Params/Configure/ParamsTree/EventButtons/NewFolder" to="TabContainer/Params/Configure/ParamsTree" method="_on_new_folder_pressed"]
+[connection signal="pressed" from="TabContainer/Params/Configure/ParamsTree/EventButtons/NewParam" to="TabContainer/Params/Configure/ParamsTree" method="_on_new_param_pressed"]
+[connection signal="pressed" from="TabContainer/Params/Configure/ParamsTree/EventButtons/Delete" to="TabContainer/Params/Configure/ParamsTree" method="_on_delete_pressed"]
+[connection signal="confirmed" from="TabContainer/Params/Configure/ParamsTree/EventButtons/Delete/DeleteConfirmationDialog" to="TabContainer/Params/Configure/ParamsTree" method="_on_delete_confirmation_dialog_confirmed"]

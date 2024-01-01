@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dqb04cgc324n1"]
+
+[ext_resource type="Script" path="res://addons/IntAud/editor/ParamEditor/param_connect_button.gd" id="1_odeco"]
+
+[node name="ConnectButton" type="MenuButton"]
+size_flags_horizontal = 3
+text = "Connect"
+script = ExtResource("1_odeco")

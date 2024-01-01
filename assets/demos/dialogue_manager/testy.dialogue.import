@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_11"
+type="Resource"
+uid="uid://o6mah4od1d3i"
+path="res://.godot/imported/testy.dialogue-27ebeea89e17068c68d3ac5f0350afd2.tres"
+
+[deps]
+
+source_file="res://assets/demos/dialogue_manager/testy.dialogue"
+dest_files=["res://.godot/imported/testy.dialogue-27ebeea89e17068c68d3ac5f0350afd2.tres"]
+
+[params]
+
+defaults=true

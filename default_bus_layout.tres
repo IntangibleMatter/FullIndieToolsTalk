@@ -1,0 +1,56 @@
+[gd_resource type="AudioBusLayout" load_steps=8 format=3 uid="uid://cqc0qsq5mhxf4"]
+
+[sub_resource type="AudioEffectEQ21" id="AudioEffectEQ21_ah5ur"]
+resource_name = "EQ21"
+
+[sub_resource type="AudioEffectReverb" id="AudioEffectReverb_e2mrh"]
+resource_name = "Reverb"
+
+[sub_resource type="AudioEffectDelay" id="AudioEffectDelay_iuiw4"]
+resource_name = "Delay"
+
+[sub_resource type="AudioEffectPitchShift" id="AudioEffectPitchShift_nnau2"]
+resource_name = "PitchShift"
+
+[sub_resource type="AudioEffectStereoEnhance" id="AudioEffectStereoEnhance_4ie6f"]
+resource_name = "StereoEnhance"
+
+[sub_resource type="AudioEffectLowPassFilter" id="AudioEffectLowPassFilter_xlde4"]
+resource_name = "LowPassFilter"
+
+[sub_resource type="AudioEffectDistortion" id="AudioEffectDistortion_cs2vr"]
+resource_name = "Distortion"
+
+[resource]
+bus/1/name = &"HEY FULLINDIE"
+bus/1/solo = false
+bus/1/mute = false
+bus/1/bypass_fx = false
+bus/1/volume_db = 0.0
+bus/1/send = &"Master"
+bus/1/effect/0/effect = SubResource("AudioEffectEQ21_ah5ur")
+bus/1/effect/0/enabled = true
+bus/1/effect/1/effect = SubResource("AudioEffectReverb_e2mrh")
+bus/1/effect/1/enabled = true
+bus/2/name = &"HOW ARE YOUUUU"
+bus/2/solo = false
+bus/2/mute = false
+bus/2/bypass_fx = false
+bus/2/volume_db = 0.0
+bus/2/send = &"Master"
+bus/2/effect/0/effect = SubResource("AudioEffectDelay_iuiw4")
+bus/2/effect/0/enabled = true
+bus/2/effect/1/effect = SubResource("AudioEffectPitchShift_nnau2")
+bus/2/effect/1/enabled = true
+bus/3/name = &"I\'M DOING FINE"
+bus/3/solo = false
+bus/3/mute = false
+bus/3/bypass_fx = false
+bus/3/volume_db = 0.0
+bus/3/send = &"Master"
+bus/3/effect/0/effect = SubResource("AudioEffectStereoEnhance_4ie6f")
+bus/3/effect/0/enabled = true
+bus/3/effect/1/effect = SubResource("AudioEffectLowPassFilter_xlde4")
+bus/3/effect/1/enabled = true
+bus/3/effect/2/effect = SubResource("AudioEffectDistortion_cs2vr")
+bus/3/effect/2/enabled = true

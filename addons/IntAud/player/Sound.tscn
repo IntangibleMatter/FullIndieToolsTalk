@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://2do4ssa2bnev"]
+
+[ext_resource type="Script" path="res://addons/IntAud/player/Sound.gd" id="1_q6ru0"]
+[ext_resource type="Script" path="res://addons/IntAud/player/ParamHandler.gd" id="2_xw0f3"]
+
+[node name="Sound" type="Node"]
+script = ExtResource("1_q6ru0")
+
+[node name="ParamHandler" type="Node" parent="."]
+script = ExtResource("2_xw0f3")

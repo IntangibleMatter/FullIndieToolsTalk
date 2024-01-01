@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="SlideResource" load_steps=3 format=3 uid="uid://dffkar65oh2ab"]
 
 [ext_resource type="Script" path="res://addons/present/misc/SlideResource.gd" id="1_bojq7"]
-[ext_resource type="Resource" uid="uid://b6xao6iy70kf1" path="res://addons/present/slides/02.tres" id="1_fhl6y"]
+[ext_resource type="Resource" uid="uid://udn6yr4jn2pf" path="res://addons/present/slides/02.tres" id="1_fhl6y"]
 
 [resource]
 script = ExtResource("1_bojq7")

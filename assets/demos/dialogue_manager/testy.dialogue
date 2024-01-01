@@ -1,0 +1,19 @@
+~ start
+
+Lyric: This is a fully functional dialogue system
+Lyric: With a text editor
+Lyric: All done as a [rainbow][wave amp=40]Godot addon[/wave]
+
+% => fullindie
+% => extra
+
+~ fullindie
+
+Talk Viewers: Hey this is really cool!
+Lyric: Right????
+
+~ extra
+
+Lyric: And there's so many more!!!
+
+=> END
