@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://b1lnhd7nu0jqm"]
+
+[ext_resource type="Script" path="res://addons/mysupercoolplugin/demo_dock_1/dock.gd" id="1_k8twx"]
+[ext_resource type="PackedScene" uid="uid://bvgcnxyc1qi6p" path="res://addons/mysupercoolplugin/demo_dock_1/twerk.tscn" id="2_j8bcj"]
+
+[node name="Super Cool Dock" type="VBoxContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_k8twx")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.5
+text = "Surprise"
+
+[node name="Twerk" parent="." instance=ExtResource("2_j8bcj")]
+visible = false
+layout_mode = 2
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
