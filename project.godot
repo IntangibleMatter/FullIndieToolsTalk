@@ -16,7 +16,12 @@ config/icon="res://icon.svg"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/present/plugin.cfg")
+enabled=PackedStringArray("res://addons/mysupercoolplugin/plugin.cfg", "res://addons/present/plugin.cfg", "res://addons/rtexpacker/addons/r_tex_packer_importer/plugin.cfg")
+
+[r_tex_packer]
+
+import_xml=false
+import_json=false
 
 [rendering]
 

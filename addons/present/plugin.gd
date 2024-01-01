@@ -4,10 +4,8 @@ extends EditorPlugin
 var nextslidebutton : Button
 var player : Player
 var display : Control
-var feature_prof : String
 
 func _enter_tree() -> void:
-	feature_prof = EditorInterface.get_current_feature_profile()
 	nextslidebutton = preload("res://addons/present/misc/next_slide_button.tscn").instantiate()
 	nextslidebutton.icon = EditorInterface.get_editor_theme().get_icon("ArrowRight", "EditorIcons")
 	add_control_to_container(EditorPlugin.CONTAINER_TOOLBAR, nextslidebutton)
@@ -20,7 +18,6 @@ func _enter_tree() -> void:
 	nextslidebutton.pressed.connect(player.next_slide)
 
 func _exit_tree() -> void:
-	EditorInterface.set_current_feature_profile(feature_prof)
 	remove_control_from_container(EditorPlugin.CONTAINER_TOOLBAR, nextslidebutton)
 	if nextslidebutton:
 		nextslidebutton.queue_free()
