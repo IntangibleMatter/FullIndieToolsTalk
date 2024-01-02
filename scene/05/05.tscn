@@ -1,14 +1,14 @@
-[gd_scene load_steps=12 format=3 uid="uid://btdpvch11ssmt"]
+[gd_scene load_steps=12 format=3 uid="uid://c6kd5w2grk3kt"]
 
-[ext_resource type="Texture2D" uid="uid://djumi4ncmt187" path="res://assets/graphics/demoscene/0405/tileset.png" id="1_6jkfe"]
-[ext_resource type="Texture2D" uid="uid://oa2d43m5tesy" path="res://assets/graphics/demoscene/0405/placeholder.png" id="1_h1v0h"]
-[ext_resource type="PackedScene" uid="uid://dsaf2lr7cxf41" path="res://scene/04/player.tscn" id="2_f825m"]
-[ext_resource type="PackedScene" uid="uid://cq285ifwm0q4r" path="res://scene/04/level_transition.tscn" id="3_4fqu4"]
-[ext_resource type="PackedScene" uid="uid://cvhaxkdoyeear" path="res://scene/04/door.tscn" id="4_lkc5p"]
-[ext_resource type="PackedScene" uid="uid://dauebbi7s1f3g" path="res://scene/04/camera_mover.tscn" id="5_fexld"]
+[ext_resource type="Texture2D" uid="uid://oa2d43m5tesy" path="res://assets/graphics/demoscene/0405/placeholder.png" id="1_2526l"]
+[ext_resource type="Texture2D" uid="uid://djumi4ncmt187" path="res://assets/graphics/demoscene/0405/tileset.png" id="2_apr75"]
+[ext_resource type="PackedScene" uid="uid://bvelxr1sio8xx" path="res://scene/05/player.tscn" id="3_kq3a3"]
+[ext_resource type="PackedScene" uid="uid://5phwevn6rkl3" path="res://scene/05/level_transition.tscn" id="4_bj6v8"]
+[ext_resource type="PackedScene" uid="uid://3ss62w8dfqcv" path="res://scene/05/camera_mover.tscn" id="6_2e5pk"]
+[ext_resource type="PackedScene" uid="uid://dbw7ucwj4b6lr" path="res://scene/05/door.tscn" id="6_jw5lo"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_06yux"]
-texture = ExtResource("1_6jkfe")
+texture = ExtResource("2_apr75")
 texture_region_size = Vector2i(48, 48)
 0:0/0 = 0
 0:0/0/terrain_set = 0
@@ -489,22 +489,22 @@ terrain_set_0/terrain_0/name = "blueberry"
 terrain_set_0/terrain_0/color = Color(0, 0.435294, 0.47451, 1)
 sources/4 = SubResource("TileSetAtlasSource_06yux")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_k7o36"]
-size = Vector2(20, 130)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s56nc"]
+size = Vector2(20, 128)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_msvow"]
-size = Vector2(20, 120)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_1d0r1"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_svy0n"]
 size = Vector2(256, 2)
 
-[node name="04" type="Node2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rvcwv"]
+size = Vector2(256, 2)
+
+[node name="05" type="Node2D"]
 texture_filter = 1
 
 [node name="Placeholder" type="Sprite2D" parent="."]
 position = Vector2(384, -248)
 scale = Vector2(1.94444, 1.94444)
-texture = ExtResource("1_h1v0h")
+texture = ExtResource("1_2526l")
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_x8vyi")
@@ -514,48 +514,35 @@ layer_0/tile_data = PackedInt32Array(851968, 65540, 2, 851969, 65540, 2, 851970,
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(576, 324)
 
-[node name="Player" parent="." instance=ExtResource("2_f825m")]
+[node name="Player" parent="." instance=ExtResource("3_kq3a3")]
 position = Vector2(1088, 432)
 facing = "left"
 
 [node name="Exits" type="Node2D" parent="."]
 
-[node name="LevelTransition" parent="Exits" instance=ExtResource("3_4fqu4")]
+[node name="LevelTransition" parent="Exits" instance=ExtResource("4_bj6v8")]
 position = Vector2(-27, 320)
+shape = SubResource("RectangleShape2D_s56nc")
 transition_to = "res://scene/04/04.tscn"
 
-[node name="CollisionShape2D" parent="Exits/LevelTransition" index="0"]
-shape = SubResource("RectangleShape2D_k7o36")
-
-[node name="LevelTransition2" parent="Exits" instance=ExtResource("3_4fqu4")]
+[node name="LevelTransition2" parent="Exits" instance=ExtResource("4_bj6v8")]
 position = Vector2(1187, 360)
+shape = SubResource("RectangleShape2D_s56nc")
 transition_to = "res://scene/04/04.tscn"
 
-[node name="CollisionShape2D" parent="Exits/LevelTransition2" index="0"]
-shape = SubResource("RectangleShape2D_msvow")
-
-[node name="Door" parent="." instance=ExtResource("4_lkc5p")]
+[node name="Door" parent="." instance=ExtResource("6_jw5lo")]
 position = Vector2(1144, 280)
 
-[node name="Door2" parent="." instance=ExtResource("4_lkc5p")]
+[node name="Door2" parent="." instance=ExtResource("6_jw5lo")]
 position = Vector2(8, 232)
 
-[node name="CameraMover" parent="." instance=ExtResource("5_fexld")]
+[node name="CameraMover" parent="." instance=ExtResource("6_2e5pk")]
 position = Vector2(560, 23)
 cam_pos = Vector2(576, 324)
+shape = SubResource("RectangleShape2D_svy0n")
 
-[node name="CollisionShape2D" parent="CameraMover" index="0"]
-shape = SubResource("RectangleShape2D_1d0r1")
-
-[node name="CameraMover2" parent="." instance=ExtResource("5_fexld")]
+[node name="CameraMover2" parent="." instance=ExtResource("6_2e5pk")]
 position = Vector2(506, -47)
 cam_pos = Vector2(384, -216)
 cam_scale = Vector2(1.47, 1.47)
-
-[node name="CollisionShape2D" parent="CameraMover2" index="0"]
-shape = SubResource("RectangleShape2D_1d0r1")
-
-[editable path="Exits/LevelTransition"]
-[editable path="Exits/LevelTransition2"]
-[editable path="CameraMover"]
-[editable path="CameraMover2"]
+shape = SubResource("RectangleShape2D_rvcwv")

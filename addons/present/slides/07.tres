@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="SlideResource" load_steps=2 format=3 uid="uid://c5xx1j64a7y4s"]
+
+[ext_resource type="Script" path="res://addons/present/misc/SlideResource.gd" id="1_yj0sv"]
+
+[resource]
+script = ExtResource("1_yj0sv")
+tab = ""
+slide_type = "slide"
+file = "res://addons/present/slides/SlideScenes/07.tscn"
+misc_data = {}
+plugins = Array[Resource("res://addons/present/misc/plugin_change_resource.gd")]([])

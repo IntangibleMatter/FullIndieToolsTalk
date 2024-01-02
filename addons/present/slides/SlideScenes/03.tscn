@@ -2,8 +2,7 @@
 
 [ext_resource type="Theme" uid="uid://bpr2dk3txbu3" path="res://assets/themes/default.tres" id="1_knall"]
 
-[node name="Control" type="Control"]
-layout_mode = 3
+[node name="Control" type="VBoxContainer"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -12,13 +11,19 @@ grow_vertical = 2
 theme = ExtResource("1_knall")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
-layout_mode = 1
-anchors_preset = 14
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-grow_horizontal = 2
-grow_vertical = 2
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_font_sizes/normal_font_size = 100
 bbcode_enabled = true
-text = "[center][img]res://assets/graphics/icons/godot.svg[/img] is made in [img]res://assets/graphics/icons/godot.svg[/img] "
+text = "[center][img=128]res://assets/graphics/icons/godot.svg[/img] is made in [img=128]res://assets/graphics/icons/godot.svg[/img] "
+fit_content = true
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+layout_mode = 2
+size_flags_vertical = 6
+bbcode_enabled = true
+text = "[ul]
+The UI system needs to be strong enough to make an engine
+Anything you can do in a game you can do in-editor
+Godot tools and plugins get to be [shake level=40 rate=60 connected=0]superpowered[/shake]"
 fit_content = true

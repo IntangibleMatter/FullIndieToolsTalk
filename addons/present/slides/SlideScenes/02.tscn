@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://cidgdoxe2r6q1"]
+[gd_scene load_steps=3 format=3 uid="uid://cidgdoxe2r6q1"]
 
 [ext_resource type="Theme" uid="uid://bpr2dk3txbu3" path="res://assets/themes/default.tres" id="1_knall"]
+[ext_resource type="Texture2D" uid="uid://bncoeaqoegwj2" path="res://assets/graphics/icons/intangible.png" id="2_tpmmr"]
 
 [node name="Aboutme" type="VBoxContainer"]
 anchors_preset = 15
@@ -17,13 +18,26 @@ bbcode_enabled = true
 text = "[center][wave amp=80 connected=0 freq=2.5][rainbow freq=0.2]Obligatory[/rainbow] [color=#069420]\"About Me\"[/color][rainbow freq=0.2] Slide[/rainbow][/wave][/center]"
 fit_content = true
 
-[node name="aboutme" type="RichTextLabel" parent="."]
+[node name="HBoxContainer2" type="HBoxContainer" parent="."]
 layout_mode = 2
-size_flags_horizontal = 5
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_stretch_ratio = 0.0
+texture = ExtResource("2_tpmmr")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="aboutme" type="RichTextLabel" parent="HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
 bbcode_enabled = true
-text = "[ul] I'm in grad year high school
- I've been making video games since 2016
- I have a live theatre background[/ul]"
+text = "[font_size=48][ul]
+I'm in grad year high school
+I've been making video games since 2016
+I have a live theatre background[/ul]"
 fit_content = true
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]

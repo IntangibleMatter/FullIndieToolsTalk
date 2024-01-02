@@ -1,0 +1,26 @@
+[gd_scene load_steps=2 format=3 uid="uid://xw23ky0144ak"]
+
+[ext_resource type="Theme" uid="uid://bpr2dk3txbu3" path="res://assets/themes/default.tres" id="1_l8u7i"]
+
+[node name="06" type="VBoxContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_l8u7i")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 2
+bbcode_enabled = true
+text = "[center][font_size=96][rainbow freq=0.5][wave amp=80 freq=2.5 connected=0]What else can we do?[/wave][/rainbow][/font_size][/center]
+
+[ul]
+Make new editors for systems
+Make scripting languages with editors
+Make this presentation
+Make just about whatever we want, for better or for worse
+Make the coding [rainbow freq=1.5][tornado radius=5 freq=10]ridiculous[/tornado][/rainbow]
+[url=https://twitter.com/passivestar_/status/1704215686388539739]Make command palette commands[/url]
+[/ul]"
+fit_content = true

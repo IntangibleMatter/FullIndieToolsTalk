@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="SlideResource" load_steps=3 format=3 uid="uid://bq8ddw6wqdx0f"]
+
+[ext_resource type="Resource" uid="uid://b5poeydegsbr8" path="res://addons/present/slides/05.tres" id="1_27o0w"]
+[ext_resource type="Script" path="res://addons/present/misc/SlideResource.gd" id="1_bwp4c"]
+
+[resource]
+script = ExtResource("1_bwp4c")
+tab = ""
+slide_type = "scene"
+file = "res://scene/04/04.tscn"
+misc_data = {}
+next_slide = ExtResource("1_27o0w")
+plugins = Array[Resource("res://addons/present/misc/plugin_change_resource.gd")]([])

@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://3ss62w8dfqcv"]
+
+[ext_resource type="Script" path="res://scene/05/camera_mover.gd" id="1_inpbd"]
+
+[node name="CameraMover" type="Area2D"]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_inpbd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

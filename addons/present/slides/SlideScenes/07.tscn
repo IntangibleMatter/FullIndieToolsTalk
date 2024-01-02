@@ -1,0 +1,59 @@
+[gd_scene load_steps=3 format=3 uid="uid://b6ok0v841oabq"]
+
+[ext_resource type="Theme" uid="uid://bpr2dk3txbu3" path="res://assets/themes/default.tres" id="1_eg0d5"]
+[ext_resource type="Texture2D" uid="uid://be14i4nuel8nl" path="res://assets/graphics/icons/gh_qr.svg" id="2_87o78"]
+
+[node name="07" type="VBoxContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_eg0d5")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 2
+bbcode_enabled = true
+text = "[center][font_size=96][rainbow freq=0.2][wave amp=80 connected=0 freq=2.5]So um... yeah[/wave][/rainbow][/font_size][/center]"
+fit_content = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Source on Github"
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 6
+texture = ExtResource("2_87o78")
+stretch_mode = 5
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 1.1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 6
+bbcode_enabled = true
+text = "Warning about the source:
+[font_size=32]
+\"This is real functioning code that was shipped with a real finished [s]game[/s] talk. As such, it is horrible. Like, just horrible. Things are hacky, undocumented, badly named, badly formatted, every sin under the sun that you’re told you should never do in Programmer School™. I’m sorry.\"
+
+[font_size=24][right]- Greg Lobanov, Wandersong Audio Engine Docs[/right][/font_size]"
+fit_content = true
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+layout_mode = 2
+bbcode_enabled = true
+text = "[center][font_size=40]Look into plugins in your engine! See what they can do![/font_size][/center]"
+fit_content = true

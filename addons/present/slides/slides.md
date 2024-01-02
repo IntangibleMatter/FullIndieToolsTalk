@@ -32,7 +32,11 @@ Obligatory "About me" page
 
 ## 03
 
-Godot is made in Godot
+Godot is made in Godot.
+
+- Editor is fully modifiable
+- Strong UI system
+- Anything you can do in a game you can do in the editor
 
 ## 04
 

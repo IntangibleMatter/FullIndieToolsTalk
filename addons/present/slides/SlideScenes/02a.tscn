@@ -1,0 +1,29 @@
+[gd_scene load_steps=2 format=3 uid="uid://bdqstcv6abg2v"]
+
+[ext_resource type="Theme" uid="uid://bpr2dk3txbu3" path="res://assets/themes/default.tres" id="1_h0lgh"]
+
+[node name="02a" type="VBoxContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_h0lgh")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 2
+bbcode_enabled = true
+text = "[center][rainbow freq=0.2][wave amp=80 freq=2.5][font_size=96]What is a Plugin?[/font_size][/wave][/rainbow][/center]
+
+[ul]
+Something that adds functionality to an engine
+[ul]More nodes
+Streamline workflows
+Entire new features
+Support more filetypes
+And more!
+[/ul]
+Second item
+Third example
+[/ul]"
+fit_content = true
