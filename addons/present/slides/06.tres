@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="SlideResource" load_steps=3 format=3 uid="uid://dgu3sr0gkd001"]
 
-[ext_resource type="Resource" uid="uid://c5xx1j64a7y4s" path="res://addons/present/slides/07.tres" id="1_fca74"]
 [ext_resource type="Script" path="res://addons/present/misc/SlideResource.gd" id="1_mvrvx"]
+[ext_resource type="Resource" uid="uid://blqbucpwnbu3d" path="res://addons/present/slides/06a.tres" id="1_wwfx3"]
 
 [resource]
 script = ExtResource("1_mvrvx")
@@ -9,5 +9,5 @@ tab = ""
 slide_type = "slide"
 file = "res://addons/present/slides/SlideScenes/06.tscn"
 misc_data = {}
-next_slide = ExtResource("1_fca74")
+next_slide = ExtResource("1_wwfx3")
 plugins = Array[Resource("res://addons/present/misc/plugin_change_resource.gd")]([])
